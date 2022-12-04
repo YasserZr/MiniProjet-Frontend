@@ -1,0 +1,38 @@
+<div class="container">
+
+
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2">
+            <label>Nom Pays en tapant</label>
+            <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control">
+           <!--  <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+            <input type="text" class="form-control" [(ngModel)]="nomPays" name="nomPays">
+            <button type="submit" (click)="recherchePays()" class="btn btn-primary mb-2 ml-2">Rechercher</button> -->
+        </div>
+    </form>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Langue</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let p of pays | filter: searchTerm">
+                    <tr>
+                        <td>{{p.idPays}}</td>
+                        <td>{{p.nomPays}}</td>
+                        <td>{{p.langue.nomLang}}</td>
+                        <!-- <td><a class="btn btn-danger" (click)="deletePays(p)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updatePays',p.idPays]">modifier</a></td> -->
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

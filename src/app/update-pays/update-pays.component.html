@@ -1,0 +1,25 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Pays :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Pays</label>
+            <input readonly type="text" [(ngModel)]="currentPays.idPays" name="idPays" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Pays</label>
+            <input type="text" [(ngModel)]="currentPays.nomPays" name="nomPays" class="form-control">
+
+        </div>
+        <br>
+        <div class="col-sm-4 col-sm-4 col-lg-4">
+            <select class="form-control form-control-lg" name="idLang" id="idLang" [(ngModel)]="updatedLangId">
+                <option *ngFor="let langs of langues" [value]="langs.idLang">{{langs.nomLang}}</option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="updatePays()" class="btn btn-success">Modifier</button>
+        </div>
+    </form>
+</div>

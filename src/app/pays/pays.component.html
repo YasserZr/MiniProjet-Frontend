@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th><th>Nom</th><th>Langue</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let p of pays">
+                    <tr>
+                        <td>{{p.idPays}}</td>
+                        <td>{{p.nomPays}}</td>
+                        <td>{{p.langue.nomLang}}</td>
+                        <td><a class="btn btn-danger" (click)="deletePays(p)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updatePays',p.idPays]">modifier</a></td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>
